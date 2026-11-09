@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="3.9.0" version="1.0">
+  <lib desc="#Wiring" name="0" />
+  <lib desc="#Gates" name="1" />
+  <lib desc="#Base" name="2" />
+  <main name="RS_Latch" />
+  <options>
+    <a name="simlimit" val="1000" />
+  </options>
+  <toolbar>
+    <tool lib="2" name="Poke Tool" />
+    <tool lib="2" name="Edit Tool" />
+    <tool lib="2" name="Text Tool" />
+    <tool lib="0" name="Pin" />
+  </toolbar>
+  <circuit name="RS_Latch">
+    <a name="circuit" val="RS_Latch" />
+    <comp name="Pin" loc="(100,110)" lib="0">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="label" val="R" />
+      <a name="labelloc" val="west" />
+      <a name="appearance" val="classic" />
+    </comp>
+    <comp name="Pin" loc="(100,250)" lib="0">
+      <a name="facing" val="east" />
+      <a name="output" val="false" />
+      <a name="label" val="S" />
+      <a name="labelloc" val="west" />
+      <a name="appearance" val="classic" />
+    </comp>
+    <wire from="(100,110)" to="(260,110)" />
+    <wire from="(100,250)" to="(260,250)" />
+    <comp name="NOR Gate" loc="(300,120)" lib="1">
+      <a name="size" val="30" />
+      <a name="inputs" val="2" />
+    </comp>
+    <comp name="NOR Gate" loc="(300,240)" lib="1">
+      <a name="size" val="30" />
+      <a name="inputs" val="2" />
+    </comp>
+    <comp name="Pin" loc="(440,120)" lib="0">
+      <a name="facing" val="west" />
+      <a name="output" val="true" />
+      <a name="label" val="Q" />
+      <a name="labelloc" val="east" />
+      <a name="appearance" val="classic" />
+    </comp>
+    <wire from="(300,120)" to="(340,120)" />
+    <wire from="(340,120)" to="(440,120)" />
+    <wire from="(340,120)" to="(340,210)" />
+    <wire from="(220,210)" to="(340,210)" />
+    <wire from="(220,210)" to="(220,230)" />
+    <wire from="(220,230)" to="(260,230)" />
+    <wire from="(300,240)" to="(370,240)" />
+    <wire from="(370,150)" to="(370,240)" />
+    <wire from="(200,150)" to="(370,150)" />
+    <wire from="(200,130)" to="(200,150)" />
+    <wire from="(200,130)" to="(260,130)" />
+    <comp name="Pin" loc="(440,240)" lib="0">
+      <a name="facing" val="west" />
+      <a name="output" val="true" />
+      <a name="label" val="Q_N" />
+      <a name="labelloc" val="east" />
+      <a name="appearance" val="classic" />
+    </comp>
+    <wire from="(370,240)" to="(440,240)" />
+  </circuit>
+</project>
